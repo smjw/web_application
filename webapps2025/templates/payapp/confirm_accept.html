@@ -1,0 +1,15 @@
+{% extends 'payapp/base.html' %}
+
+{% block content %}
+
+<h2>Confirm Payment</h2>
+<p>Do you want to pay {{ payment_request.requester.username }} 
+    {{ payment_request.amount }} {{ request.user.account.get_currency_display }}?</p>
+
+<form action="{% url 'confirm_payment_request' payment_request.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+
+<a href="{% url 'home' %}">Cancel</a>
+{% endblock %}

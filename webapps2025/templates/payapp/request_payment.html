@@ -1,0 +1,13 @@
+{% extends 'payapp/base.html' %}
+{% block content %}
+
+<h2>Request a Payment</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Request</button>
+</form>
+
+<a href="{% url 'home' %}"><button type="submit">Cancel?</button></a>
+
+{% endblock %}
