@@ -92,8 +92,6 @@ def convert_currency(request, currency1, currency2, amount):
     })
 
 
-
-
 #get conversion from my api
 def get_conversion(from_currency, to_currency, amount):
     response = requests.get(
